@@ -760,6 +760,8 @@
       "expressionsprite": "Asset.Sprite",
       "_spr": "Asset.Sprite",
       "_obj_player": "Asset.Object",
+      "player": "Asset.Object",
+      "_playerid": "Asset.Object",
       "baddiegrabbedID": "Asset.Object",
       "attackdash": "Asset.Sprite",
       "airattackdash": "Asset.Sprite",
@@ -802,7 +804,6 @@
       "editor_state": "Enum.EditorState",
       "instance_state": "Enum.InstanceState",
       "transformation": "Enum.State",
-
 
       "divisionjustforplayersprites": "Asset.Sprite",
       "spr_move": "Asset.Sprite",
@@ -1151,6 +1152,15 @@
       "menu_id": "Enum.MenuIDs"
     },
     "FunctionArguments": {
+      "gml_Script_lang_draw_sprite": [
+        "Asset.Sprite", null, null, null
+      ],
+      "gml_Script_declare_particle": [
+        "Enum.ParticleType",
+        "Asset.Sprite",
+        null,
+        null
+      ],
       "gml_Script_check_slope": ["Asset.Object"],
       "gml_Script_scr_hurtplayer": ["Asset.Object"],
       "gml_Script_check_slope_player": ["Asset.Object"],
@@ -1168,6 +1178,12 @@
         null,
         null,
         null
+      ],
+      "gml_Script_tile_meeting": [
+        null,
+        null,
+        null,
+        "Enum.TileMeetingFlag"
       ],
       "gml_Script_scr_get_gamepadicon": ["Constant.GamepadButton"],
       "gml_Script_pal_swap_set": ["Asset.Sprite", null, null],
@@ -1220,7 +1236,7 @@
       "gml_Script_is_holiday": ["Enum.Holiday"],
       "gml_Script_notification_push": ["Enum.Notification", null],
       "gml_Script_tv_push_prompt": [null, "Enum.TVPromptTypes", null, null],
-      "gml_Script_scr_draw_text_arr": [null, null, null, null, "Enum.TextEffect"],
+      "gml_Script_scr_draw_text_arr": [null, null, null, "Constant.Color", null, "Enum.TextEffect", null],
       "gml_Script_scr_bombshoot": ["Enum.State"],
       "gml_Script_create_menu_fixed": {
         "MacroType": "Union",
