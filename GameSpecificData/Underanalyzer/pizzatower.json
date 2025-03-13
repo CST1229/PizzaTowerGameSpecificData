@@ -316,23 +316,23 @@
       "Enum.ParticleType": {
         "Name": "particletypes",
         "Values": {
-          "first": 0,
+          "none": 0,
           "cloudeffect": 1,
-          "crazyrunothereffect": 1,
-          "highjumpcloud1": 2,
-          "highjumpcloud2": 3,
-          "jumpdust": 4,
-          "balloonpop": 5,
-          "shotgunimpact": 6,
-          "impact": 7,
-          "genericpoofeffect": 8,
-          "keyparticles": 9,
-          "teleporteffect": 10,
-          "landcloud": 11,
-          "ratmountballooncloud": 12,
-          "groundpoundeffect": 13,
-          "noisegrounddasheffect": 14,
-          "antigrav_bubblepop": 15,
+          "crazyrunothereffect": 2,
+          "highjumpcloud1": 3,
+          "highjumpcloud2": 4,
+          "jumpdust": 5,
+          "balloonpop": 6,
+          "shotgunimpact": 7,
+          "impact": 8,
+          "genericpoofeffect": 9,
+          "keyparticles": 10,
+          "teleporteffect": 11,
+          "landcloud": 12,
+          "ratmountballooncloud": 13,
+          "groundpoundeffect": 14,
+          "noisegrounddasheffect": 15,
+          "antigrav_bubblepop": 16,
           "last": 16
         }
       },
@@ -349,12 +349,6 @@
           "red_alt": 7,
           "noise": 8,
           "last": 9
-        }
-      },
-      "Enum.DebrisType": {
-        "Name": "debristype",
-        "Values": {
-          "normal": 0
         }
       },
       "Enum.Notification": {
@@ -681,8 +675,8 @@
           "laugh": 4
         }
       },
-      "Enum.NoiseOLDBehaviour": {
-        "Name": "noiseOLD_behaviour",
+      "Enum.NoiseBehaviour": {
+        "Name": "noise_behaviour",
         "Values": {
           "none": 0,
           "close": 1,
@@ -1218,7 +1212,7 @@
           [null, null, "Enum.ParticleType", null]
         ]
       },
-      "gml_Script_particle_set_scale": ["Enum.AfterimageType", null, null],
+      "gml_Script_particle_set_scale": ["Enum.ParticleType", null, null],
       "has_value": {
         "MacroType": "Union",
         "Macros": [
@@ -1331,7 +1325,7 @@
     },
     "gml_Script____struct___63_create_debris_gml_GlobalScript_scr_particle_system": {
       "Variables": {
-        "type": "Enum.DebrisType"
+        "type": "Enum.ParticleType"
       }
     },
     "gml_Script_tdp_input_serialize_array": {
