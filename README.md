@@ -3,11 +3,9 @@ This repository hosts a series of JSON files written for the `underanalyzer` bra
 
 # How To Install
 1. [Compile](https://github.com/UnderminersTeam/UndertaleModTool/blob/underanalyzer/README.md#compilation-instructions) the latest commit of UndertaleModTool from the `underanalyzer` branch.
-2. In the folder containing the EXE, navigate to `GameSpecificData/Underanalyzer`.
-3. Put in `pizzatower.json` from this repository.
-4. Next, go back to the `GameSpecificData` folder and enter the `Definitions` folder.
-5. Put in `pizzatowerdef.json` from this repository.
-6. You're done! Launch UTMT (from your own compilation, of course) and the next time you open up Pizza Tower, the changes should be applied!
+2. Get a copy of this repository. I'd recommend usiing GitHub's ZIP download for easy install, but it's up to you how.
+3. In the folder containing the UTMT build, merge the `GameSpecificData` folder from this repository into the one there.
+4. You're done! Launch UTMT from there and the next time you open up Pizza Tower, the changes should be applied!
 
 # Known Issues
-- So far, I've really only gotten to about half of the codebase. It's helpful and mostly furfilling enough at the moment to release, however!
+- While progress is steady, it still isn't 100% there yet. It, however, should be useful enough to make basic mods with.
