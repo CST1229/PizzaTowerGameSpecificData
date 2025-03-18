@@ -544,7 +544,7 @@
           "menu_delete": 19,
           "menu_quit": 20,
           "menu_start": 21,
-          "menu_reset_binds": 21
+          "menu_reset_binds": 22
         }
       },
       "Enum.TokenType": {
