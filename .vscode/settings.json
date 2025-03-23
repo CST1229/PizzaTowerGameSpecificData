@@ -1,0 +1,12 @@
+{
+	// Underanalyzer's JSON parser accepts comments and trailing commas, so make use of them!
+	"json.schemas": [{
+		"fileMatch": [
+			"/GameSpecificData/Underanalyzer/*.json"
+		],
+		"schema": {
+			"allowTrailingCommas": true,
+			"allowComments": true,
+		}
+	}]
+}
