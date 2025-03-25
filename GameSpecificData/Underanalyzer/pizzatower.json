@@ -310,7 +310,7 @@
           "unknown303": 303,
           "unknown304": 304,
           "machcancelstart": 305,
-          "machcancel": 306
+          "machcancel": 306,
         }
       },
       "Enum.ParticleType": {
@@ -687,6 +687,111 @@
     },
     "Constants": {},
     "General": {
+      "Asset.ZeroOrSprite": {
+        // Copied from UTMT's deltarune.json definition file
+        "MacroType": "Union",
+        "Macros": [
+          {
+            "MacroType": "Intersect",
+            "Macros": [
+              {
+                "MacroType": "MatchNot",
+                "ConditionalType": "Integer",
+                "ConditionalValue": "0"
+              },
+              "Asset.Sprite"
+            ]
+          },
+          {
+            "MacroType": "Match",
+            "ConditionalType": "Integer",
+            "ConditionalValue": "0"
+          }
+        ]
+      },
+      "Asset.ZeroOneOrSprite": {
+        "MacroType": "Union",
+        "Macros": [
+          {
+            "MacroType": "Intersect",
+            "Macros": [
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "0"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "1"},
+              "Asset.Sprite"
+            ]
+          },
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "0"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "1"},
+        ]
+      },
+      "Asset.ZeroOrObject": {
+        "MacroType": "Union",
+        "Macros": [
+          {
+            "MacroType": "Intersect",
+            "Macros": [
+              {
+                "MacroType": "MatchNot",
+                "ConditionalType": "Integer",
+                "ConditionalValue": "0"
+              },
+              "Asset.Object"
+            ]
+          },
+          {
+            "MacroType": "Match",
+            "ConditionalType": "Integer",
+            "ConditionalValue": "0"
+          }
+        ]
+      },
+      "Asset.ObjectOr0To2": {
+        "MacroType": "Union",
+        "Macros": [
+          {
+            "MacroType": "Intersect",
+            "Macros": [
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "0"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "1"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "2"},
+              "Asset.Object"
+            ]
+          },
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "0"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "1"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "2"},
+        ]
+      },
+      "Asset.ObjectOr0To8": {
+        "MacroType": "Union",
+        "Macros": [
+          {
+            "MacroType": "Intersect",
+            "Macros": [
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "0"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "1"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "2"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "3"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "4"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "5"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "6"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "7"},
+              {"MacroType": "MatchNot", "ConditionalType": "Integer", "ConditionalValue": "8"},
+              "Asset.Object"
+            ]
+          },
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "0"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "1"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "2"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "3"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "4"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "5"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "6"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "7"},
+          {"MacroType": "Match", "ConditionalType": "Integer", "ConditionalValue": "8"},
+        ]
+      },
+
       "Array<Asset.Room>": {
         "MacroType": "ArrayInit",
         "Macro": "Asset.Room"
@@ -713,22 +818,32 @@
       "fallspr": "Asset.Sprite",
       "stunfallspr": "Asset.Sprite",
       "walkspr": "Asset.Sprite",
+      "chasespr": "Asset.Sprite",
       "turnspr": "Asset.Sprite",
       "recoveryspr": "Asset.Sprite",
       "grabbedspr": "Asset.Sprite",
       "scaredspr": "Asset.Sprite",
       "ragespr": "Asset.Sprite",
+      "throwspr": "Asset.Sprite",
+      "transitionspr": "Asset.Sprite",
+      "angryspr": "Asset.Sprite",
       "spr_dead": "Asset.Sprite",
-      "spr_palette": "Asset.Sprite",
+      "spr_palette": "Asset.ZeroOrSprite",
       "tube_spr": "Asset.Sprite",
-      "spr_intro": "Asset.Sprite",
+      "upspr": "Asset.Sprite",
+      "downspr": "Asset.Sprite",
+      "deadspr": "Asset.Sprite",
       "spr_introidle": "Asset.Sprite",
+      "spr_pose": "Asset.Sprite",
+      "spr_run": "Asset.Sprite",
+      "spr_intro": "Asset.Sprite",
+      "spr_idle_strongcold": "Asset.Sprite",
+      "spr_run_strongcold": "Asset.Sprite",
+      "spr_intro_strongcold": "Asset.Sprite",
       "playerid": "Asset.Object",
       "ts": "Asset.Tileset",
-      "t": "Asset.Sprite",
       "spr_attack": "Asset.Sprite",
       "spr_hidden": "Asset.Sprite",
-      "spr_idle": "Asset.Sprite",
       "stunspr": "Asset.Sprite",
       "leveltorestart": "Asset.Room",
       "targetRoom": "Asset.Room",
@@ -743,20 +858,23 @@
       "bgsprite": "Asset.Sprite",
       "ratpowerup": "Asset.Object",
       "boss_hpsprite": "Asset.Sprite",
+      "player_hpsprite": "Asset.Sprite",
       "bpal": "Asset.Sprite",
       "bossspr": "Asset.Sprite",
       "c": "Constant.Color",
+      "c_player": "Constant.Color",
       "pl": "Asset.Object",
-      "spr": "Asset.Sprite",
+      "spr": "Asset.ZeroOneOrSprite",
       "boss_palette": "Asset.Sprite",
-      "content": "Asset.Object",
+      "content": "Asset.ZeroOrObject",
       "target": "Asset.Object",
       "expressionsprite": "Asset.Sprite",
+      "hurtTV": "Asset.Sprite",
       "_spr": "Asset.Sprite",
       "_obj_player": "Asset.Object",
-      "player": "Asset.Object",
-      "_playerid": "Asset.Object",
-      "baddiegrabbedID": "Asset.Object",
+      "player": "Asset.ObjectOr0To2",
+      "_playerid": "Asset.ObjectOr0To2",
+      "baddiegrabbedID": "Asset.ZeroOrObject",
       "attackdash": "Asset.Sprite",
       "airattackdash": "Asset.Sprite",
       "airattackdashstart": "Asset.Sprite",
@@ -768,6 +886,7 @@
       "_back": "Constant.GamepadButton",
       "tvsprite": "Asset.Sprite",
       "sprite": "Asset.Sprite",
+      "prevsprite": "Asset.Sprite",
 
       "state": "Enum.State",
       "_state": "Enum.State",
@@ -799,7 +918,8 @@
       "instance_state": "Enum.InstanceState",
       "transformation": "Enum.State",
 
-      "divisionjustforplayersprites": "Asset.Sprite",
+      // Player sprites (scr_characterspr)
+      "spr_idle": "Asset.Sprite",
       "spr_move": "Asset.Sprite",
       "spr_crawl": "Asset.Sprite",
       "spr_hurt": "Asset.Sprite",
@@ -1061,6 +1181,81 @@
       "spr_breakdanceuppercut": "Asset.Sprite",
       "spr_breakdanceuppercutend": "Asset.Sprite",
 
+
+      "title_sprite": "Asset.Sprite",
+      "titlecard_sprite": "Asset.Sprite",
+      "playersprite": "Asset.Sprite",
+      "peppino_sprite": "Asset.Sprite",
+      "toppin_sprite": "Asset.Sprite",
+      "bell_sprite": "Asset.Sprite",
+      "portrait1_sprite": "Asset.Sprite",
+      "portrait2_sprite": "Asset.Sprite",
+      "pizzaface_sprite": "Asset.Sprite",
+      "johnface_sprite": "Asset.Sprite",
+      "bubblespr": "Asset.Sprite",
+      "noise_sprite": "Asset.Sprite",
+      "noisesprite": "Asset.Sprite",
+      "iconspr": "Asset.Sprite",
+      "hand_sprite": "Asset.Sprite",
+      "canon_sprite": "Asset.Sprite",
+      "captain_sprite": "Asset.Sprite",
+      "door_sprite": "Asset.Sprite",
+      "throw_sprite": "Asset.ZeroOrSprite",
+      "_sprite": "Asset.Sprite",
+      "gate_sprite": "Asset.Sprite",
+      "taunt_spr": "Asset.Sprite",
+      "rank_spr": "Asset.Sprite",
+      "spr_happy": "Asset.Sprite",
+      "tauntspr": "Asset.Sprite",
+      "activatespr": "Asset.Sprite",
+      "dancespr": "Asset.Sprite",
+      "smilespr": "Asset.Sprite",
+      "item_sprite": "Asset.Sprite",
+      "spr_arrow": "Asset.Sprite",
+      "bg_spr": "Asset.Sprite",
+      "playerspr": "Asset.Sprite",
+      "particlespr": "Asset.Sprite",
+      "bomblit_spr": "Asset.Sprite",
+      "defeatplayerspr": "Asset.Sprite",
+      "bumpspr": "Asset.Sprite",
+      "bubble_spr": "Asset.Sprite",
+      "transspr": "Asset.Sprite", // holy hell hehe 
+      "confirmspr": "Asset.Sprite",
+      "selectedspr": "Asset.Sprite",
+      "clipspr": "Asset.Sprite",
+      "signspr": "Asset.Sprite",
+      "bouncespr": "Asset.Sprite",
+      "parryspr": "Asset.Sprite",
+      "background_spr": "Asset.Sprite",
+      "achievement_spr": "Asset.Sprite",
+      "visible_spr": "Asset.Sprite",
+      "treasurespr": "Asset.Sprite",
+      "shootspr": "Asset.Sprite",
+      "gerome_spr": "Asset.Sprite",
+      "timerspr": "Asset.Sprite",
+      "spitcheesespr": "Asset.Sprite",
+      "hitceillingspr": "Asset.Sprite", // yes, mcpig typo'd this
+      "hitwallspr": "Asset.Sprite",
+      "stunfalltransspr": "Asset.Sprite", //
+      "rollingspr": "Asset.Sprite",
+      "flyingspr": "Asset.Sprite",
+      "hitspr": "Asset.Sprite",
+      "stunlandspr": "Asset.Sprite",
+      "stompedspr": "Asset.Sprite",
+      "handsprite": "Asset.Sprite",
+      "player_sprite": "Asset.Sprite",
+      "spr_sign": "Asset.Sprite",
+      "spr_helicopter": "Asset.Sprite",
+      "spr_name": "Asset.Sprite",
+      "spr_air": "Asset.Sprite",
+      "spr_animatronic": "Asset.Sprite",
+      "spr_pal": "Asset.Sprite",
+      "spr_hand": "Asset.Sprite",
+      "spr_left": "Asset.Sprite",
+      "spr_right": "Asset.Sprite",
+      "spr_content_dead": "Asset.Sprite",
+      "spr_gamepadbuttons": "Asset.Sprite",
+
       "_face": "Constant.GamepadButton",
       "objectlist": "Array<Asset.Object>",
       "object_arr": "Array<Asset.Object>",
@@ -1072,17 +1267,17 @@
       "flash_arr": "Array<Asset.Object>",
       "collision_list": "Array<Asset.Object>",
 
-      "platformid": "Asset.Object",
+      "platformid": "Asset.ZeroOrObject",
       "objID": "Asset.Object",
       "objectID": "Asset.Object",
       "spawnenemyID": "Asset.Object",
-      "ID": "Asset.Object",
+      "ID": "Asset.ObjectOr0To8",
       "pizzashieldID": "Asset.Object",
       "angryeffectid": "Asset.Object",
       "pizzashieldid": "Asset.Object",
       "superchargedeffectid": "Asset.Object",
-      "baddieID": "Asset.Object",
-      "baddieid": "Asset.Object",
+      "baddieID": "Asset.ZeroOrObject",
+      "baddieid": "Asset.ZeroOrObject",
       "brickid": "Asset.Object",
       "attackerID": "Asset.Object",
       "object": "Asset.Object",
@@ -1098,6 +1293,11 @@
       "crazyruneffectid": "Asset.Object",
       "superslameffectid": "Asset.Object",
       "speedlineseffectid": "Asset.Object",
+      "_checker": "Asset.Object",
+
+      // september 2021 hub
+      "anarchist": "Asset.Object",
+      "dragonactor": "Asset.Object",
 
       "rm": "Asset.Room",
       "room_index": "Asset.Room",
@@ -1105,6 +1305,7 @@
       "room_arr": "Array<Asset.Room>",
 
       "vstitle": "Asset.Sprite",
+      "vstitleplayer": "Asset.Sprite",
       "bg": "Asset.Sprite",
       "bg2": "Asset.Sprite",
       "bg3": "Asset.Sprite",
@@ -1117,6 +1318,7 @@
       "panicspr": "Asset.Sprite",
       "bossarr": "Array<Asset.Sprite>",
       "palettetexture": "Asset.Sprite",
+      "texture": "Asset.Sprite",
       "switchstart": "Asset.Sprite",
       "switchend": "Asset.Sprite",
       "_hurt": "Asset.Sprite",
@@ -1181,8 +1383,15 @@
       ],
       "gml_Script_scr_get_gamepadicon": ["Constant.GamepadButton"],
       "gml_Script_pal_swap_set": ["Asset.Sprite", null, null],
-      "gml_Script_create_collect": [null, null, "Asset.Sprite", null],
+      "gml_Script_create_collect": {
+        "MacroType": "Union",
+        "Macros": [
+          [null, null, "Asset.Sprite", null],
+          [null, null, "Asset.Sprite"]
+        ]
+      },
       "layer_background_change": [null, "Asset.Sprite"],
+      "layer_background_sprite": [null, "Asset.Sprite"],
       "instance_place_list": [null, null, "Asset.Object", null, "Bool"],
       "gml_Script_try_solid": [null, null, "Asset.Object", null],
       "gml_Script_achievement_unlock": [null, null, "Asset.Sprite", null],
@@ -1194,15 +1403,15 @@
       "gml_Script_tdp_action": {
         "MacroType": "Union",
         "Macros": [
-          [null, "Constant.GamepadButton"],
-          [null, "Constant.GamepadButton", null]
+          ["Enum.TDPInputActionType", "Constant.GamepadButton"],
+          ["Enum.TDPInputActionType", "Constant.GamepadButton", null]
         ]
       },
       "gml_Script_tdp_input_action": {
         "MacroType": "Union",
         "Macros": [
-          [null, "Constant.GamepadButton"],
-          [null, "Constant.GamepadButton", null]
+          ["Enum.TDPInputActionType", "Constant.GamepadButton"],
+          ["Enum.TDPInputActionType", "Constant.GamepadButton", null]
         ]
       },
       "gml_Script_create_particle": {
@@ -1230,7 +1439,23 @@
       "gml_Script_is_holiday": ["Enum.Holiday"],
       "gml_Script_notification_push": ["Enum.Notification", null],
       "gml_Script_tv_push_prompt": [null, "Enum.TVPromptTypes", null, null],
-      "gml_Script_scr_draw_text_arr": [null, null, null, "Constant.Color", null, "Enum.TextEffect", null],
+      "gml_Script_tv_do_expression": {
+        "MacroType": "Union",
+        "Macros": [
+          ["Asset.Sprite"],
+          ["Asset.Sprite", "Bool"],
+          ["Asset.Sprite", "Bool", "Bool"],
+        ]
+      },
+      "gml_Script_scr_draw_text_arr": {
+        "MacroType": "Union",
+        "Macros": [
+          [null, null, null, "Constant.Color", null, "Enum.TextEffect", null],
+          [null, null, null, "Constant.Color", null, "Enum.TextEffect"],
+          [null, null, null, "Constant.Color", null],
+          [null, null, null, "Constant.Color"],
+        ]
+      },
       "gml_Script_scr_bombshoot": ["Enum.State"],
       "gml_Script_create_menu_fixed": {
         "MacroType": "Union",
@@ -1256,19 +1481,43 @@
           [null, null, null, "Asset.Sprite", null],
           [null, null, null, "Asset.Sprite", null, null]
         ]
-      }
+      },
+      "gml_Script_add_music":  {
+        "MacroType": "Union",
+        "Macros": [
+          ["Asset.Room", null, null, null],
+          ["Asset.Room", null, null, null, null]
+        ]
+      },
+      "gml_Script_scr_pauseicon_add":  {
+        "MacroType": "Union",
+        "Macros": [
+          ["Asset.Sprite"],
+          ["Asset.Sprite", null],
+          ["Asset.Sprite", null, null],
+          ["Asset.Sprite", null, null, null],
+        ]
+      },
+      "gml_Script_boss_update_pizzaheadKO": ["Asset.Sprite", "Asset.Sprite"],
     },
     "FunctionReturn": {
       "object_get_parent": "Asset.Object",
       "gml_Script_scr_checkanygamepad": "Constant.GamepadButton",
       "gml_Script_component_get_dock": "Enum.Dock",
-      "gml_Script_scr_getallrooms": "Array<Asset.Room>"
+      "gml_Script_scr_getallrooms": "Array<Asset.Room>",
+      "layer_background_get_sprite": "Asset.Sprite",
     }
   },
   "CodeEntryNames": {
     "gml_Script_scr_get_gamepadicon": {
       "Variables": {
         "argument0": "Constant.GamepadButton"
+      }
+    },
+    "gml_Script_scr_draw_granny_texture": {
+      "Variables": {
+        "argument6": "Asset.Sprite",
+        "argument7": "Asset.Sprite"
       }
     },
     "gml_Script_scr_draw_enemy": {
@@ -1318,7 +1567,7 @@
         "ini_read_string": [null, null, "Constant.GamepadButton"]
       }
     },
-    "gml_Object_obj_ending_create_0": {
+    "gml_Object_obj_ending_Create_0": {
       "Variables": {
         "spawn_arr": "Array<Asset.Sprite>"
       }
@@ -1340,7 +1589,14 @@
     },
     "gml_Script_tdp_get_icon": {
       "Variables": {
-        "type": "Enum.TDPInputActionType"
+        "type": "Enum.TDPInputActionType",
+        "value":  {
+          "MacroType": "Union",
+          "Macros": [
+            "Constant.GamepadButton",
+            "Constant.VirtualKey"
+          ]
+        },
       }
     },
     "gml_Script_tdp_text_commit": {
@@ -1410,7 +1666,9 @@
     "gml_Script_scr_draw_text_arr": {
       "Variables": {
         "t": "Enum.TextType",
-        "val": "Enum.ButtonIcon"
+        "val": "Enum.ButtonIcon",
+        "argument3": "Constant.Color",
+        "argument5": "Enum.TextEffect",
       }
     },
     "gml_Script_anon_tdp_input_key_gml_GlobalScript_tdp_input_classes_316_tdp_input_key_gml_GlobalScript_tdp_input_classes": {
@@ -1421,6 +1679,14 @@
     "gml_Script_tdp_input_action": {
       "Variables": {
         "type": "Enum.TDPInputActionType"
+      }
+    },
+    "gml_Script_tdp_text_action_text": {
+      "Variables": {
+        "argument3": "Constant.Color",
+        "argument4": "Constant.Color",
+        "argument5": "Constant.Color",
+        "argument6": "Constant.Color",
       }
     },
     "gml_Script_anon_tdp_input_action_gml_GlobalScript_tdp_input_classes_1897_tdp_input_action_gml_GlobalScript_tdp_input_classes": {
@@ -1442,6 +1708,11 @@
     "gml_Script_anon_gml_Object_obj_achievementtracker_Create_0_25261_gml_Object_obj_achievementtracker_Create_0": {
       "Variables": {
         "arr": "Array<Asset.Object>"
+      }
+    },
+    "gml_Object_obj_secrettile_Create_0": {
+      "Variables": {
+        "t": "Asset.Sprite",
       }
     }
   }
